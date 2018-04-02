@@ -14,6 +14,7 @@ class BuildControl extends Component {
         <button
           className="Less"
           onClick={() => this.props.onRemoveIngredient(this.props.label)}
+          disabled={this.props.ingredients.indexOf(this.props.label) === -1}
         >
           Less
         </button>
@@ -39,6 +40,7 @@ const mapDispatchToProps = (dispatch) => {
 
 BuildControl.propTypes = {
   label: PropTypes.string.isRequired,
+  ingredients: PropTypes.array,
   onAddIngredient: PropTypes.func,
   onRemoveIngredient: PropTypes.func
 };

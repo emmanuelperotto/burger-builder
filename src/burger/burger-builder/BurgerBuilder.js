@@ -9,7 +9,10 @@ class BurgerBuilder extends Component {
     return (
       <div>
         <Burger ingredients={this.props.ingredients} />
-        <BuildControls totalPrice={this.props.totalPrice} />
+        <BuildControls
+          totalPrice={this.props.totalPrice}
+          purchasable={this.props.ingredients.length > 0}
+        />
       </div>
     );
   }
