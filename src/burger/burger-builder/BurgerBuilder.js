@@ -9,14 +9,15 @@ class BurgerBuilder extends Component {
     return (
       <div>
         <Burger ingredients={this.props.ingredients} />
-        <BuildControls />
+        <BuildControls totalPrice={this.props.totalPrice} />
       </div>
     );
   }
 }
 
 BurgerBuilder.propTypes = {
-  ingredients: PropTypes.array
+  ingredients: PropTypes.array,
+  totalPrice: PropTypes.number.isRequired
 };
 
 const mapStateToProps = (state) => ({ ...state.burgerBuilder });
