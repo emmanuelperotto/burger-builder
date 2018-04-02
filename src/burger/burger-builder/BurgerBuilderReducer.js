@@ -1,5 +1,5 @@
 import { ADD_INGREDIENT, REMOVE_INGREDIENT } from "../../app/store/actionTypes";
-import { removeIngredients } from "./BurgerBuilderHelper";
+import { removeIngredients, calculateTotalPrice } from "./BurgerBuilderHelper";
 
 const initialState = {
   ingredients: [],
@@ -19,7 +19,7 @@ const burgerBuilderReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         ingredients: removeIngredients(state.ingredients, payload.label),
-        totalPrice: state.totalPrice - payload.price
+        totalPrice: calculateTotalPrice(state, payload, type)
       };
     default:
       return state;
