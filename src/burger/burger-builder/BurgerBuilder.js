@@ -3,11 +3,13 @@ import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import Burger from '../Burger';
 import BuildControls from '../build-controls/BuildControls';
+import Modal from '../../app/ui/modal/Modal';
 
 class BurgerBuilder extends Component {
   render() {
     return (
       <div>
+        <Modal />
         <Burger ingredients={this.props.ingredients} />
         <BuildControls
           totalPrice={this.props.totalPrice}
