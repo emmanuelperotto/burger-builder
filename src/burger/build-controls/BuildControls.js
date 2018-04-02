@@ -10,7 +10,6 @@ const controls = [
   'Meat'
 ];
 
-
 const BuildControls = (props) => {
   return (
     <div className="BuildControls">
@@ -22,12 +21,20 @@ const BuildControls = (props) => {
           label={element}
         />
       ))}
+
+      <button
+        className="OrderButton"
+        disabled={!props.purchasable}
+      >
+        Order Now
+      </button>
     </div>
   );
 };
 
 BuildControls.propTypes = {
-  totalPrice: PropTypes.number.isRequired
+  totalPrice: PropTypes.number.isRequired,
+  purchasable: PropTypes.bool.isRequired
 };
 
 export default BuildControls;
