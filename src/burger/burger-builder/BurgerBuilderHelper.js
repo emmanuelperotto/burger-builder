@@ -12,7 +12,6 @@ export const removeIngredients = (ingredients, label) => {
 };
 
 export const calculateTotalPrice = (state, payload, actionType) => {
-
   let totalValue = state.totalPrice;
 
   switch (actionType) {
